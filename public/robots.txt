@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ashique-portfolio.vercel.app/sitemap.xml

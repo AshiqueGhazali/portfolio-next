@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import HeroCursor from "./components/HeroCursor";
 import SectionOne from "./components/SectionOne";
+import DetailsSection from "./components/DetailsSection";
 
 const page = () => {
   return (
@@ -16,6 +17,7 @@ const page = () => {
         {/* bg-[#0c0a09] */}
         {/* <Skills/> */}
         <SectionOne/>
+        <DetailsSection/>
       </div>
     </div>
   );
