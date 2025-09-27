@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Hero from "./components/Hero";
-import Skills from "./components/Skills";
+import Skills from "./components/SkillsRef";
 import HeroCursor from "./components/HeroCursor";
 import SectionOne from "./components/SectionOne";
 import DetailsSection from "./components/DetailsSection";

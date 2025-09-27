@@ -139,14 +139,29 @@ const Skills = () => {
     "Others",
   ];
   return (
-    <div id="skills" className="pt-20 px-4">
-      <div className="w-full">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3 items-center gap-3 flex-wrap">
+    <div id="skills" className="w-screen py-20 px-10 lg:px-20">
+      <div className="w-full lg:bg-[#1a1a1a]  rounded-[16px] px-6 py-10">
+        <div className="flex justify-end mb-10">
+          <div className="flex gap-3 items-center">
+            <h1 className="text-2xl font-bold text-white">Skills</h1>
+            <div className="w-16 h-[2px] bg-[#5a0961]"></div>
+          </div>
+        </div>
+        <div className="hidden lg:flex justify-center items-center gap-3 flex-wrap">
+          {skills.map((skill, index) => {
+            return (
+              <React.Fragment key={index}>
+                <SkillCard skill={skill} />
+              </React.Fragment>
+            );
+          })}
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:hidden items-center gap-3 flex-wrap">
           {skills.map((skill, index) => {
             return (
               <div
                 key={index}
-                className={`group w-full flex flex-col justify-center items-center gap-2 text-sm border border-[#17264b]  px-4 py-2 rounded-[5px] cursor-pointer transition-all duration-300 group-hover:[border-color:var(--hover-color)]`}
+                className={`group w-full flex flex-col justify-center items-center gap-2 text-sm border border-[#2a2a2a]  px-4 py-2 rounded-[5px] cursor-pointer transition-all duration-300 group-hover:[border-color:var(--hover-color)]`}
                 style={{ "--hover-color": skill.color } as React.CSSProperties}
               >
                 <skill.icon className="text-lg transition-colors duration-300 text-gray-400 group-hover:[color:var(--hover-color)]" />
