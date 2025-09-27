@@ -113,7 +113,7 @@ const HeroCursor: React.FC = () => {
       className="relative h-[100vh] flex items-center justify-center  w-screen overflow-hidden"
     >
       {/* Smoke Particles */}
-      {smokeParticles.map((particle) => (
+      {/* {smokeParticles.map((particle) => (
         <div
           key={particle.id}
           className="absolute pointer-events-none rounded-full"
@@ -132,7 +132,7 @@ const HeroCursor: React.FC = () => {
             transform: "translate3d(0, 0, 0)",
           }}
         />
-      ))}
+      ))} */}
 
       {/* Ambient Glow */}
       <div

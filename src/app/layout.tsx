@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { Poppins } from "next/font/google";
 
-import { Great_Vibes } from "next/font/google";
 
-const greatVibes = Great_Vibes({
-  weight: "400",
+
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], 
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -38,8 +40,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-background text-foreground custom-scrollbar overflow-x-hidden">
-        <Navbar />
+      <body className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}>
+        {/* <Navbar /> */}
         <div className="container">{children}</div>
       </body>
     </html>
