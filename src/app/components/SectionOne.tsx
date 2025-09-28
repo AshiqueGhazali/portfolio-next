@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
+import SocialLinks from "./ui/SocialLinks";
 
 const SectionOne = () => {
   const navLinks = [
@@ -15,8 +14,8 @@ const SectionOne = () => {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const handleObserver = (entries:any) => {
-      entries.forEach((entry:any) => {
+    const handleObserver = (entries: any) => {
+      entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
         }
@@ -42,57 +41,55 @@ const SectionOne = () => {
   }, []);
 
   return (
-    <div className="py-20 xl:px-20 hidden lg:flex flex-col justify-between">
-      {/* Profile Info */}
-      <div className="flex gap-3 flex-col">
-        <p className="font-bold text-[40px] text-[#FFFFFF]">Ashique PK</p>
-        <p className="text-[16px] font-medium">FULL STACK ENGINEER</p>
-        <p className="text-[14px] font-normal text-gray-400">
-          I build accessible, pixel-perfect digital <br /> experiences for the web.
-        </p>
-      </div>
+    <div className="sticky top-0">
+      <div className="py-20 absolute h-[100vh]  px-30 hidden lg:flex flex-col justify-between">
+        {/* Profile Info */}
+        <div className="flex gap-3 flex-col">
+          <p className="font-bold text-[40px] text-[#FFFFFF]">Ashique PK</p>
+          <p className="text-[16px] font-medium">FULL STACK ENGINEER</p>
+          <p className="text-[14px] font-normal text-gray-400">
+            I build accessible, pixel-perfect digital <br /> experiences for the
+            web.
+          </p>
+        </div>
 
-      {/* Nav Links */}
-      <div className="flex flex-col gap-3">
-        {navLinks.map((link, index) => {
-          const isActive = activeSection === link.href.replace("#", "");
-          return (
-            <Link
-              href={link.href}
-              key={index}
-              className={`flex gap-3 cursor-pointer transition-all items-center group`}
-            >
-              <div
-                className={`h-[2px] transition-all duration-500 w-10 
-                  ${isActive ? "w-20 bg-white" : "bg-gray-400 group-hover:w-20 group-hover:bg-white"}
-                `}
-              ></div>
-              <p
-                className={`font-semibold uppercase text-[12px] transition-colors 
-                  ${isActive ? "text-white" : "text-gray-400 group-hover:text-white"}
-                `}
+        {/* Nav Links */}
+        <div className="flex flex-col gap-3">
+          {navLinks.map((link, index) => {
+            const isActive = activeSection === link.href.replace("#", "");
+            return (
+              <Link
+                href={link.href}
+                key={index}
+                className={`flex gap-3 cursor-pointer transition-all items-center group`}
               >
-                {link.name}
-              </p>
-            </Link>
-          );
-        })}
-      </div>
+                <div
+                  className={`h-[2px] transition-all duration-500 w-10 
+                  ${
+                    isActive
+                      ? "w-20 bg-white"
+                      : "bg-gray-400 group-hover:w-20 group-hover:bg-white"
+                  }
+                `}
+                ></div>
+                <p
+                  className={`font-semibold uppercase text-[12px] transition-colors 
+                  ${
+                    isActive
+                      ? "text-white"
+                      : "text-gray-400 group-hover:text-white"
+                  }
+                `}
+                >
+                  {link.name}
+                </p>
+              </Link>
+            );
+          })}
+        </div>
 
-      {/* Social Links */}
-      <div className="flex gap-4 text-[22px] text-gray-400 items-center">
-        <Link href={"#"} target="_blank" className="hover:text-white">
-          <FaGithub />
-        </Link>
-        <Link href={"#"} target="_blank" className="hover:text-white">
-          <FaLinkedin />
-        </Link>
-        <Link href={"#"} target="_blank" className="hover:text-white">
-          <FaInstagram />
-        </Link>
-        <Link href={"#"} target="_blank" className="hover:text-white">
-          <SiLeetcode />
-        </Link>
+        {/* Social Links */}
+        <SocialLinks />
       </div>
     </div>
   );

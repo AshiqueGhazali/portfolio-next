@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div id="about" className="mt-20 lg:px-4">
+    <div id="about" className="pt-20 lg:px-4">
       <p className="text-gray-400 text-[14px] leading-6">
         I’m a <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">full-stack</span> developer
         passionate about building scalable, high-performing web applications

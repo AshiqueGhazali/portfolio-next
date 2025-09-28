@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 const DetailsSection = () => {
   return (
-    <div className="max-h-[100vh] lg:px-6 overflow-auto transition-all duration-300 scrollbar-hide">
+    <div className="min-h-[100vh] lg:px-6  transition-all duration-300 scrollbar-hide">
       <About />
       <Experiance />
       <Skills />

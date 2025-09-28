@@ -27,7 +27,7 @@ const Experiance = () => {
           href={item.href}
           key={index}
           target="_blank"
-          className="w-full lg:px-4 group py-3 lg:py-4 rounded-[5px] hover:border-t border-[#17264b] hover:bg-[#17264b]/30 flex flex-col xl:flex-row gap-2 "
+          className="w-full lg:px-4 group py-3 lg:py-4 rounded-[5px] hover:border-t border-[#17264b] lg:hover:bg-[#17264b]/30 flex flex-col xl:flex-row gap-2 "
         >
           <div className="lg:w-[250px] flex-shink-0">
             <p className="text-[14px] font-medium text-gray-400">{item.year}</p>

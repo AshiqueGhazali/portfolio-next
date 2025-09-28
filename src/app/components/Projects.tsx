@@ -8,7 +8,7 @@ const Projects = () => {
       {projectsData.map((item, index) => (
         <div
           key={index}
-          className="w-full lg:px-4 group py-3 lg:py-4 rounded-[5px] hover:border-t border-[#17264b] hover:bg-[#17264b]/30 flex flex-col xl:flex-row transition-all duration-500 gap-4"
+          className="w-full lg:px-4 group py-3 lg:py-4 rounded-[5px] hover:border-t border-[#17264b] lg:hover:bg-[#17264b]/30 flex flex-col xl:flex-row transition-all duration-500 gap-4"
         >
           <div className="w-full xl:max-w-[200px] flex-shink-0">
             <img
@@ -30,7 +30,7 @@ const Projects = () => {
             <p className="text-[14px] font-normal pointer-events-none text-gray-400 mt-2">
               {item.details}
             </p>
-            <div className="flex lg:hidden flex-wrap gap-2 mt-3 transition-all duration-300">
+            {/* <div className="flex lg:hidden flex-wrap gap-2 mt-3 transition-all duration-300">
               {item.techstack.map((tech, techIndex) => (
                 <span
                   key={techIndex}
@@ -39,9 +39,9 @@ const Projects = () => {
                   {tech}
                 </span>
               ))}
-            </div>
+            </div> */}
             <div className="overflow-hidden mt-3">
-              <div className="hiddn lg:flex flex-wrap gap-2 transform translate-y-[-100%] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+              <div className="flex flex-wrap gap-2 transform translate-y-[-100%] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                 {item.techstack.map((tech, techIndex) => (
                   <span
                     key={techIndex}

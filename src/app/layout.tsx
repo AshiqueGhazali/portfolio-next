@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}>
-        {/* <Navbar /> */}
+        <Navbar />
         <div className="container">{children}</div>
       </body>
     </html>
