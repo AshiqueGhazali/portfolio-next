@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import SocialLinks from "./ui/SocialLinks";
+import { TypingAnimation } from "./ui/TypingAnimation";
 
 const SectionOne = () => {
   const navLinks = [
@@ -45,8 +46,9 @@ const SectionOne = () => {
       <div className="py-20 absolute h-[100vh]  px-30 hidden lg:flex flex-col justify-between">
         {/* Profile Info */}
         <div className="flex gap-3 flex-col">
-          <p className="font-bold text-[40px] text-[#FFFFFF]">Ashique PK</p>
-          <p className="text-[16px] font-medium">FULL STACK ENGINEER</p>
+          <p className="font-bold text-[40px] text-[#FFFFFF] pointer-events-none">Ashique PK</p>
+           <TypingAnimation startOnView={true} className="text-[16px] font-medium">FULL STACK ENGINEER</TypingAnimation>
+           {/* <p className="text-[16px] font-medium"></p> */}
           <p className="text-[14px] font-normal text-gray-400">
             I build accessible, pixel-perfect digital <br /> experiences for the
             web.
