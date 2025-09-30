@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import SocialLinks from "./ui/SocialLinks";
 import { TypingAnimation } from "./ui/TypingAnimation";
+import DownloadButton from "./ui/ResumeDownloadButton";
 
 const SectionOne = () => {
   const navLinks = [
@@ -53,6 +54,7 @@ const SectionOne = () => {
             I build accessible, pixel-perfect digital <br /> experiences for the
             web.
           </p>
+          <DownloadButton />
         </div>
 
         {/* Nav Links */}

@@ -5,6 +5,7 @@ import HeroCursor from "./components/HeroCursor";
 import SectionOne from "./components/SectionOne";
 import DetailsSection from "./components/DetailsSection";
 import SocialLinks from "./components/ui/SocialLinks";
+import DownloadButtonMobile from "./components/ui/DownloadButtonMobile";
 
 const page = () => {
   
@@ -23,6 +24,7 @@ const page = () => {
         <div className="hidden lg:block"></div>
         <DetailsSection />
       </div>
+      <DownloadButtonMobile />
     </div>
   );
 };
