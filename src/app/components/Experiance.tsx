@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import SectionMobileHead from "./ui/SectionMobileHead";
 
 const Experiance = () => {
   const experianceData = [
@@ -21,7 +22,8 @@ const Experiance = () => {
     },
   ];
   return (
-    <div id="experiance" className="mt-20 flex flex-col gap-6 w-full">
+    <div id="experiance" className="mt-20 flex flex-col gap-4 w-full">
+      <SectionMobileHead title="Experiance" />
       {experianceData.map((item, index) => (
         <Link
           href={item.href}

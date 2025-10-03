@@ -27,6 +27,7 @@ import {
   SiNginx,
 } from "react-icons/si";
 import SkillCard from "./ui/SkillCard";
+import SectionMobileHead from "./ui/SectionMobileHead";
 
 const skills = [
   // Frontend
@@ -140,6 +141,7 @@ const Skills = () => {
   ];
   return (
     <div id="skills" className="pt-20 px-4">
+      <SectionMobileHead title="Skills" className="mb-3" />
       <div className="w-full">
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-3 items-center gap-3 flex-wrap">
           {skills.map((skill, index) => {
