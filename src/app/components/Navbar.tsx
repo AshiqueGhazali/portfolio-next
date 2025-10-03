@@ -66,7 +66,8 @@ const Navbar = () => {
 
     const observer = new IntersectionObserver(handleObserver, {
       root: null,
-      threshold: 0.4, // section is considered active if 40% is visible
+      // threshold: 0.4,
+      threshold: 0.1,
     });
 
     navLinks.forEach((link) => {
