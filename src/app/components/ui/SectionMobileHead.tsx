@@ -32,7 +32,7 @@ const SectionMobileHead = ({className, title}: {className?: string, title: strin
         className="w-full h-1 bg-[#FFFFFF]/60 overflow-hidden relative"
       >
         <div 
-          className={`absolute inset-0 bg-white transition-transform duration-700 ease-out ${
+          className={`absolute inset-0 bg-white transition-transform duration-1200 ease-out ${
             isVisible ? 'translate-x-0' : '-translate-x-full'
           }`}
         />
