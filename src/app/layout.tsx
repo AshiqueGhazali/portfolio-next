@@ -44,15 +44,20 @@ export default function RootLayout({
         <Navbar />
         <div className="container">{children}</div>
         {/* tracker script */}
-        <script type="text/javascript">
-          var sc_project=13189240; var sc_invisible=1; var
-          sc_security="50950cb3";
-        </script>
         <script
-          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+      var sc_project=13189240;
+      var sc_invisible=1;
+      var sc_security="50950cb3";
+    `,
+          }}
+        ></script>
+        <script
           src="https://www.statcounter.com/counter/counter.js"
           async
         ></script>
+
         <noscript>
           <div className="statcounter">
             <a
