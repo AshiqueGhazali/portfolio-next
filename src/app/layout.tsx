@@ -3,11 +3,9 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Poppins } from "next/font/google";
 
-
-
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], 
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 });
 
@@ -40,9 +38,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}>
+      <body
+        className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}
+      >
         <Navbar />
         <div className="container">{children}</div>
+        {/* tracker script */}
+        <script type="text/javascript">
+          var sc_project=13189240; var sc_invisible=1; var
+          sc_security="50950cb3";
+        </script>
+        <script
+          type="text/javascript"
+          src="https://www.statcounter.com/counter/counter.js"
+          async
+        ></script>
+        <noscript>
+          <div className="statcounter">
+            <a
+              title="Web Analytics"
+              href="https://statcounter.com/"
+              target="_blank"
+            >
+              <img
+                className="statcounter"
+                src="https://c.statcounter.com/13189240/0/50950cb3/1/"
+                alt="Web Analytics"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </a>
+          </div>
+        </noscript>
       </body>
     </html>
   );
