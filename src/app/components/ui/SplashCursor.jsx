@@ -676,6 +676,16 @@ function SplashCursor({
       if (resizeCanvas()) initFramebuffers();
       updateColors(dt);
       applyInputs();
+
+      // Automatic random splashes
+      if (Math.random() < 0.05) {
+        let x = Math.random();
+        let y = Math.random();
+        let dx = 1000 * (Math.random() - 0.5);
+        let dy = 1000 * (Math.random() - 0.5);
+        splat(x, y, dx, dy, generateColor());
+      }
+
       step(dt);
       render(null);
       requestAnimationFrame(updateFrame);
