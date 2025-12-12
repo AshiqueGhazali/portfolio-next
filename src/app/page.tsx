@@ -8,15 +8,17 @@ import SocialLinks from "./components/ui/SocialLinks";
 import DownloadButtonMobile from "./components/ui/DownloadButtonMobile";
 
 const page = () => {
-  
+
   return (
     <div className="w-full">
-      <div className="w-full fixed h-screen -z-10">
-        <Hero />
-      </div>
-      <HeroCursor />
-      <div className="absolute flex w-full justify-center bottom-20">
-        <SocialLinks />
+      <div className="w-full h-screen relative">
+        <div className="w-full fixed h-screen -z-10">
+          <Hero />
+        </div>
+        <HeroCursor />
+        <div className="flex absolute w-full justify-center bottom-20">
+          <SocialLinks />
+        </div>
       </div>
       <SectionOne />
 
