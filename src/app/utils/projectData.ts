@@ -19,6 +19,23 @@ const projectsData = [
     details: `A cutting-edge cryptocurrency platform for secure and efficient digital asset transactions. At Subhx Infotech, I contributed by developing scalable backend architecture, implementing auto KYC verification, and ensuring a responsive, high-performance frontend. The platform offers advanced features for crypto trading and portfolio management.`,
   },
   {
+    image: "/subhxConnect.png",
+    name: "SUBHX Connect",
+    href: "https://subhxconnect.com/",
+    techstack: [
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Redis",
+      "Redux",
+      "Socket.IO",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+    details: `SUBHX Connect is a high-speed broadband and network connectivity service by SUBHX Infotech, offering reliable internet solutions for residential and enterprise users. I worked on the frontend implementation, including UI/UX design, API integrations, and developing key features such as the chat support system and FAQ sections, ensuring a responsive and high-performance user experience.`,
+  },
+  {
     image: "/hirup.png",
     name: "Subhux HireUp",
     href: "https://hireup.subhx.in/",
