@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import ScrollIndicator from "./components/ui/ScrollIndicator";
+import CustomCursor from "./components/ui/CustomCursor";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,7 +42,9 @@ export default function RootLayout({
       <body
         className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}
       >
-        <div className="bg-noise"></div>
+        <ScrollIndicator />
+        <CustomCursor />
+        <div className="bg-noise mix-blend-overlay opacity-50"></div>
         <main className="min-h-screen relative z-10">{children}</main>
         {/* tracker script */}
         <script

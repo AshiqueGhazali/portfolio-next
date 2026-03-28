@@ -29,7 +29,7 @@ export default function ContactScene() {
 
         <a
           href="mailto:ashiquekundala6@gmail.com"
-          className="inline-flex items-center justify-center px-10 py-5 text-sm font-medium transition-all glass-panel text-white hover:bg-white hover:text-black rounded-full shadow-[0_0_40px_rgba(255,255,255,0.05)] hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="inline-flex items-center justify-center px-10 py-5 text-sm font-medium transition-all duration-500 glass-panel text-white hover:bg-white hover:text-black rounded-full shadow-[0_0_40px_rgba(255,255,255,0.05)] hover:scale-105 active:scale-95 active:shadow-none hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] ease-[cubic-bezier(0.22,1,0.36,1)]"
         >
           <span className="tracking-widest">GET IN TOUCH</span>
         </a>

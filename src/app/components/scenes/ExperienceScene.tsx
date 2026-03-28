@@ -51,7 +51,7 @@ export default function ExperienceScene() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
                 viewport={{ once: false, margin: "-20%" }}
                 transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                className="w-full flex flex-col lg:flex-row gap-8 lg:gap-16 items-start"
+                className="w-full flex flex-col lg:flex-row gap-8 lg:gap-16 items-start group p-8 lg:p-12 rounded-3xl transition-all duration-700 hover:bg-white/[0.02] hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.05)] hover:-translate-y-2 border border-transparent hover:border-white/[0.05]"
               >
                 <div className="lg:w-1/3 flex-shrink-0">
                   <span className="text-xs font-semibold tracking-[0.2em] text-primary block uppercase mb-4">

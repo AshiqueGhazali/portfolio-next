@@ -61,7 +61,7 @@ export default function ProjectsScene() {
                     </div>
 
                     <div className="pt-2 lg:pt-6 pb-4">
-                      <a href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 group px-6 py-3 lg:px-8 lg:py-4 bg-white/10 hover:bg-white text-foreground hover:text-black rounded-full transition-all duration-500 hover:scale-105 active:scale-95 text-xs lg:text-sm">
+                      <a href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 group px-6 py-3 lg:px-8 lg:py-4 bg-white/10 hover:bg-white text-foreground hover:text-black rounded-full transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-95 text-xs lg:text-sm">
                         <span className="font-medium tracking-wide">View Project</span>
                         <ArrowUpRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:rotate-45 transition-transform duration-300" />
                       </a>
@@ -69,8 +69,8 @@ export default function ProjectsScene() {
                   </div>
 
                   {/* Right Image Container */}
-                  <div className="flex-1 w-full max-h-[40%] lg:max-h-[65%] lg:h-[65vh] relative group overflow-hidden rounded-2xl glass-panel flex items-center justify-center bg-black/50">
-                    <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-transparent transition-colors duration-700" />
+                  <div className="flex-1 w-full max-h-[40%] lg:max-h-[65%] lg:h-[65vh] relative group overflow-hidden rounded-2xl glass-panel flex items-center justify-center bg-black/50 transition-all duration-700 hover:bg-black/80 hover:shadow-2xl hover:-translate-y-2 hover:shadow-primary/10 cursor-none">
+                    <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
                     <img 
                       src={project.image} 
                       alt={project.name}

@@ -25,6 +25,31 @@ const TextScene = () => {
     <section ref={containerRef} className="relative h-[300vh] w-full bg-background border-t border-white/5">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         
+        {/* Ambient Drifting Particles */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
+          {[...Array(5)].map((_, i) => (
+             <motion.div
+               key={i}
+               className="absolute w-2 h-2 bg-white rounded-full blur-sm mix-blend-screen"
+               style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+               }}
+               animate={{
+                 y: [0, -100, 0],
+                 x: [0, 50, 0],
+                 opacity: [0.1, 0.5, 0.1],
+                 scale: [1, 2, 1]
+               }}
+               transition={{
+                 duration: 15 + Math.random() * 10,
+                 repeat: Infinity,
+                 ease: "linear"
+               }}
+             />
+          ))}
+        </div>
+        
         {/* Phrase 1 */}
         <motion.div 
           style={{ opacity: phrase1Opacity, y: phrase1Y }}
