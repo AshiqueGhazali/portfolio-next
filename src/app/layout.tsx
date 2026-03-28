@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./components/Navbar";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -41,8 +40,8 @@ export default function RootLayout({
       <body
         className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}
       >
-        <Navbar />
-        <div className="container">{children}</div>
+        <div className="bg-noise"></div>
+        <main className="min-h-screen relative z-10">{children}</main>
         {/* tracker script */}
         <script
           dangerouslySetInnerHTML={{

@@ -1,34 +1,21 @@
-"use client";
 import React from "react";
-import Hero from "./components/Hero";
-import HeroCursor from "./components/HeroCursor";
-import SectionOne from "./components/SectionOne";
-import DetailsSection from "./components/DetailsSection";
-import SocialLinks from "./components/ui/SocialLinks";
-import DownloadButtonMobile from "./components/ui/DownloadButtonMobile";
+import IntroScene from "./components/scenes/IntroScene";
+import TextScene from "./components/scenes/TextScene";
+import SkillsScene from "./components/scenes/SkillsScene";
+import ProjectsScene from "./components/scenes/ProjectsScene";
+import ExperienceScene from "./components/scenes/ExperienceScene";
+import ContactScene from "./components/scenes/ContactScene";
 
-const page = () => {
-
+export default function Page() {
   return (
-    <div className="w-full">
-      <div className="w-full h-screen relative">
-        <div className="w-full fixed h-screen -z-10">
-          <Hero />
-        </div>
-        <HeroCursor />
-        <div className="flex absolute w-full justify-center bottom-20">
-          <SocialLinks />
-        </div>
-      </div>
-      <SectionOne />
-
-      <div className="w-screen lg:grid grid-cols-2 px-10 lg:px-30   bg-[#0f172a]">
-        <div className="hidden lg:block"></div>
-        <DetailsSection />
-      </div>
-      <DownloadButtonMobile />
-    </div>
+    <main className="relative w-full bg-background text-foreground selection:bg-primary/30 selection:text-primary">
+      {/* Scroll-driven Story Sections */}
+      <IntroScene />
+      <TextScene />
+      <SkillsScene />
+      <ProjectsScene />
+      <ExperienceScene />
+      <ContactScene />
+    </main>
   );
-};
-
-export default page;
+}
