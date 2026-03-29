@@ -17,7 +17,7 @@ export default function SkillsScene() {
   });
 
   return (
-    <section ref={containerRef} className="relative h-[200vh] w-full bg-background border-t border-white/5">
+    <section ref={containerRef} className="relative h-[200vh] w-full bg-background border-t border-border">
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-6">
         
         <motion.h3 

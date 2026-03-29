@@ -38,7 +38,7 @@ export default function ProjectsScene() {
                 className="w-screen h-[100dvh] flex items-center justify-center p-6 pt-24 pb-12 lg:p-24 relative overflow-hidden"
               >
                 {/* Background Numbering */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40vw] lg:text-[30vw] font-bold text-white/[0.02] pointer-events-none z-0">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40vw] lg:text-[30vw] font-bold text-foreground/[0.03] pointer-events-none z-0">
                   0{index + 1}
                 </div>
 
@@ -66,7 +66,7 @@ export default function ProjectsScene() {
                         {project.techstack.map((tech, i) => (
                             <span
                             key={i}
-                            className="px-3 py-1 lg:px-4 lg:py-2 text-[10px] lg:text-xs font-medium bg-white/5 border border-white/10 text-muted-foreground rounded-full tracking-wider"
+                            className="px-3 py-1 lg:px-4 lg:py-2 text-[10px] lg:text-xs font-medium bg-foreground/5 border border-border text-muted-foreground rounded-full tracking-wider"
                             >
                             {tech}
                             </span>
@@ -74,7 +74,7 @@ export default function ProjectsScene() {
                     </div>
 
                     <div className="pt-2 lg:pt-6 pb-4">
-                      <a href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 group px-6 py-3 lg:px-8 lg:py-4 bg-white/10 hover:bg-white text-foreground hover:text-black rounded-full transition-all duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-95 text-xs lg:text-sm">
+                      <a href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 group px-6 py-3 lg:px-8 lg:py-4 bg-foreground/10 hover:bg-foreground text-foreground hover:text-background rounded-full transition-all duration-500 hover:scale-105 active:scale-95 text-xs lg:text-sm">
                         <span className="font-medium tracking-wide">View Project</span>
                         <ArrowUpRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:rotate-45 transition-transform duration-300" />
                       </a>
@@ -85,9 +85,9 @@ export default function ProjectsScene() {
                   <motion.div 
                     layoutId={`project-bg-${index}`}
                     onClick={() => setSelectedProject(index)}
-                    className="flex-1 w-full max-h-[40%] lg:max-h-[65%] lg:h-[65vh] relative group overflow-hidden rounded-2xl flex items-center justify-center bg-white/5 transition-all duration-700 hover:bg-white/10 hover:shadow-2xl hover:-translate-y-2 hover:shadow-primary/10 cursor-pointer border border-white/10"
+                    className="flex-1 w-full max-h-[40%] lg:max-h-[65%] lg:h-[65vh] relative group overflow-hidden rounded-2xl flex items-center justify-center bg-foreground/5 transition-all duration-700 hover:bg-foreground/10 hover:shadow-2xl hover:-translate-y-2 hover:shadow-primary/10 cursor-pointer border border-border"
                   >
-                    <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
+                    <div className="absolute inset-0 bg-background/40 z-10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
                     <motion.img 
                       layoutId={`project-image-${index}`}
                       src={project.image} 
@@ -114,7 +114,7 @@ export default function ProjectsScene() {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-black/95 backdrop-blur-md"
+              className="absolute inset-0 bg-background/95 backdrop-blur-md"
               onClick={() => setSelectedProject(null)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -124,19 +124,19 @@ export default function ProjectsScene() {
             {/* Modal Content */}
             <motion.div
               layoutId={`project-bg-${selectedProject}`}
-              className="relative w-full max-w-6xl h-auto min-h-[80vh] bg-[#0B0B0F] border border-white/10 rounded-3xl overflow-hidden flex flex-col md:flex-row z-10 shadow-2xl"
+              className="relative w-full max-w-6xl h-auto min-h-[80vh] bg-background border border-border rounded-3xl overflow-hidden flex flex-col md:flex-row z-10 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-black/50 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-md"
+                className="absolute top-6 right-6 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-background/50 border border-border text-foreground/70 hover:text-foreground hover:bg-foreground/10 transition-colors backdrop-blur-md"
               >
                 <X className="w-5 h-5" />
               </button>
 
               {/* Left Side: Large Image */}
-              <div className="w-full md:w-1/2 p-8 md:p-16 flex items-center justify-center bg-white/5 relative">
+              <div className="w-full md:w-1/2 p-8 md:p-16 flex items-center justify-center bg-foreground/5 relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent z-0" />
                 <motion.img
                   layoutId={`project-image-${selectedProject}`}
@@ -147,7 +147,7 @@ export default function ProjectsScene() {
               </div>
 
               {/* Right Side: Details */}
-              <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-[#0B0B0F] relative z-10 border-l border-white/5">
+              <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-background relative z-10 border-l border-border">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -201,11 +201,11 @@ export default function ProjectsScene() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.8 }}
                   >
-                    <a href={projectsData[selectedProject].href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-8 py-4 bg-foreground text-background hover:bg-white/90 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 font-medium text-sm">
+                    <a href={projectsData[selectedProject].href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-8 py-4 bg-foreground text-background hover:bg-foreground/90 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 font-medium text-sm shadow-lg">
                       Live Preview <ArrowUpRight className="w-4 h-4" />
                     </a>
                     {projectsData[selectedProject].github && (
-                      <a href={projectsData[selectedProject].github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 text-foreground hover:bg-white/10 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 font-medium text-sm">
+                      <a href={projectsData[selectedProject].github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-8 py-4 bg-foreground/5 border border-border text-foreground hover:bg-foreground/10 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 font-medium text-sm">
                         Source Code <Github className="w-4 h-4" />
                       </a>
                     )}

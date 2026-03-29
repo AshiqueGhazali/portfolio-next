@@ -111,7 +111,7 @@ function OutputBlock({ lines }: { lines: string[] }) {
   return (
     <div className="mt-1">
       {rendered.map((line, i) => (
-        <div key={i} className={`leading-6 ${line.startsWith("  ") ? "text-muted-foreground/80" : line.includes("─") ? "text-white/20" : line === "" ? "" : "text-emerald-400"}`}>
+        <div key={i} className={`leading-6 ${line.startsWith("  ") ? "text-muted-foreground/80" : line.includes("─") ? "text-foreground/20" : line === "" ? "" : "text-primary"}`}>
           {line || "\u00A0"}
         </div>
       ))}
@@ -212,12 +212,12 @@ export default function TerminalMode() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 1 }}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/5 border border-white/10 text-muted-foreground text-xs font-mono tracking-wider hover:bg-white/10 hover:text-foreground transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg backdrop-blur-sm hidden md:flex"
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-2.5 rounded-full bg-foreground/5 border border-border text-muted-foreground text-xs font-mono tracking-wider hover:bg-foreground/10 hover:text-foreground transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg backdrop-blur-sm hidden md:flex"
         aria-label="Open terminal"
       >
         <span className="text-primary">_</span>
         <span>terminal</span>
-        <kbd className="ml-1 px-1.5 py-0.5 bg-white/10 rounded text-[10px]">/</kbd>
+        <kbd className="ml-1 px-1.5 py-0.5 bg-foreground/10 rounded text-[10px]">/</kbd>
       </motion.button>
 
       {/* Mobile Trigger */}
@@ -226,7 +226,7 @@ export default function TerminalMode() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 1 }}
-        className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-white/5 border border-white/10 text-primary flex items-center justify-center text-lg font-mono hover:bg-white/10 transition-all duration-300 active:scale-95 shadow-lg backdrop-blur-sm md:hidden"
+        className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-foreground/5 border border-border text-primary flex items-center justify-center text-lg font-mono hover:bg-foreground/10 transition-all duration-300 active:scale-95 shadow-lg backdrop-blur-sm md:hidden"
         aria-label="Open terminal"
       >
         _
@@ -244,14 +244,13 @@ export default function TerminalMode() {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+              className="absolute inset-0 bg-background/80 backdrop-blur-sm"
               onClick={() => setOpen(false)}
             />
 
             {/* Terminal Window */}
             <motion.div
-              className="relative w-full md:max-w-3xl h-[85svh] md:h-[600px] rounded-t-3xl md:rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-white/10"
-              style={{ background: "rgba(10, 10, 15, 0.98)" }}
+              className="relative w-full md:max-w-3xl h-[85svh] md:h-[600px] rounded-t-3xl md:rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-border glass-panel pointer-events-auto"
               initial={{ y: "100%", scale: 0.97 }}
               animate={{ y: 0, scale: 1 }}
               exit={{ y: "100%", scale: 0.97 }}
@@ -259,7 +258,7 @@ export default function TerminalMode() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Title bar */}
-              <div className="flex items-center justify-between px-5 py-3.5 border-b border-white/5 flex-shrink-0">
+              <div className="flex items-center justify-between px-5 py-3.5 border-b border-border flex-shrink-0 bg-background/50">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500/70" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
@@ -306,7 +305,7 @@ export default function TerminalMode() {
               {/* Input Area */}
               <form
                 onSubmit={handleSubmit}
-                className="flex items-center gap-2 px-5 py-3.5 border-t border-white/5 flex-shrink-0"
+                className="flex items-center gap-2 px-5 py-3.5 border-t border-border flex-shrink-0 bg-background/50"
               >
                 <span className="text-primary font-mono text-sm flex-shrink-0">❯</span>
                 <input

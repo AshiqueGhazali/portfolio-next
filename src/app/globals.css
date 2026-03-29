@@ -21,6 +21,34 @@
 
   /* Noise Texture Data URI */
   --noise-url: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  --glass-bg: rgba(17, 17, 24, 0.4);
+  --glass-hover-bg: rgba(26, 26, 36, 0.5);
+  --glass-border: var(--border);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --button-glow: 0 0 40px rgba(255, 255, 255, 0.05);
+  --button-glow-hover: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+[data-theme='light'] {
+  --background: #FAFAFA;
+  --foreground: #27272A;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #7c3aed;
+  --muted: #f1f5f9;
+  --muted-foreground: #71717A;
+  --accent: #0891b2;
+  --border: rgba(0, 0, 0, 0.06);
+  --input: rgba(0, 0, 0, 0.05);
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-hover-bg: rgba(255, 255, 255, 0.95);
+  --glass-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  
+  --button-glow: 0 4px 14px 0 rgba(0, 0, 0, 0.05);
+  --button-glow-hover: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
 }
 
 @theme inline {
@@ -38,6 +66,10 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* Dynamic Shadows */
+  --shadow-button: var(--button-glow);
+  --shadow-button-hover: var(--button-glow-hover);
 
   /* Font families - clean modern */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -78,6 +110,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-weight: 300;
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
@@ -117,16 +150,16 @@ body {
 }
 
 .glass-panel {
-  background: rgba(17, 17, 24, 0.4);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: var(--glass-shadow);
 }
 
 .glass-panel:hover {
-  background: rgba(26, 26, 36, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-hover-bg);
+  border: 1px solid var(--border);
 }
 
 /* Smooth scrolling */

@@ -4,6 +4,8 @@ import { Poppins } from "next/font/google";
 import ScrollIndicator from "./components/ui/ScrollIndicator";
 import CustomCursor from "./components/ui/CustomCursor";
 import TerminalMode from "./components/ui/TerminalMode";
+import { ThemeProvider } from "./components/ThemeProvider";
+import { ThemeToggle } from "./components/ui/ThemeToggle";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -43,11 +45,14 @@ export default function RootLayout({
       <body
         className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}
       >
-        <ScrollIndicator />
-        <CustomCursor />
-        <TerminalMode />
-        <div className="bg-noise mix-blend-overlay opacity-50"></div>
-        <main className="min-h-screen relative z-10">{children}</main>
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+          <ThemeToggle />
+          <ScrollIndicator />
+          <CustomCursor />
+          <TerminalMode />
+          <div className="bg-noise mix-blend-overlay opacity-30 md:opacity-50"></div>
+          <main className="min-h-screen relative z-10">{children}</main>
+        </ThemeProvider>
         {/* tracker script */}
         <script
           dangerouslySetInnerHTML={{

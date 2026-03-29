@@ -31,7 +31,7 @@ export default function ExperienceScene() {
   // As user scrolls through the massive 200vh height, cards float up sequentially
   
   return (
-    <section ref={containerRef} className="relative py-32 lg:py-48 min-h-[150vh] w-full bg-background border-t border-white/5 flex items-center justify-center">
+    <section ref={containerRef} className="relative py-32 lg:py-48 min-h-[150vh] w-full bg-background border-t border-border flex items-center justify-center">
       
       <div className="max-w-6xl mx-auto px-6 w-full flex flex-col gap-32">
         <div className="w-full text-left md:text-center sticky top-32 lg:static mb-10 z-0">
@@ -51,7 +51,7 @@ export default function ExperienceScene() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
                 viewport={{ once: false, margin: "-20%" }}
                 transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                className="w-full flex flex-col lg:flex-row gap-8 lg:gap-16 items-start group p-8 lg:p-12 rounded-3xl transition-all duration-700 hover:bg-white/[0.02] hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.05)] hover:-translate-y-2 border border-transparent hover:border-white/[0.05]"
+                className="w-full flex flex-col lg:flex-row gap-8 lg:gap-16 items-start group p-8 lg:p-12 rounded-3xl transition-all duration-700 hover:bg-foreground/[0.02] hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] hover:-translate-y-2 border border-transparent hover:border-border"
               >
                 <div className="lg:w-1/3 flex-shrink-0">
                   <span className="text-xs font-semibold tracking-[0.2em] text-primary block uppercase mb-4">

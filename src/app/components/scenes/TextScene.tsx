@@ -22,7 +22,7 @@ const TextScene = () => {
   const phrase3Y = useTransform(scrollYProgress, [0.7, 0.8, 0.9, 1.0], [50, 0, 0, -50]);
 
   return (
-    <section ref={containerRef} className="relative h-[300vh] w-full bg-background border-t border-white/5">
+    <section ref={containerRef} className="relative h-[300vh] w-full bg-background border-t border-border">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         
         {/* Ambient Drifting Particles */}
@@ -30,7 +30,7 @@ const TextScene = () => {
           {[...Array(5)].map((_, i) => (
              <motion.div
                key={i}
-               className="absolute w-2 h-2 bg-white rounded-full blur-sm mix-blend-screen"
+               className="absolute w-2 h-2 bg-foreground rounded-full blur-sm mix-blend-screen"
                style={{
                   top: `${Math.random() * 100}%`,
                   left: `${Math.random() * 100}%`,

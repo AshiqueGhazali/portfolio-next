@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 export default function ContactScene() {
   return (
-    <section className="relative min-h-[100svh] w-full bg-background flex flex-col items-center justify-center p-6 border-t border-white/5">
+    <section className="relative min-h-[100svh] w-full bg-background flex flex-col items-center justify-center p-6 border-t border-border">
 
       {/* Soft Premium Glow */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[80vw] md:w-[60vw] h-[60vw] bg-white/[0.02] rounded-full blur-[120px] mix-blend-screen" />
+        <div className="w-[80vw] md:w-[60vw] h-[60vw] bg-foreground/[0.02] rounded-full blur-[120px] mix-blend-screen" />
       </div>
 
       <motion.div
@@ -29,7 +29,7 @@ export default function ContactScene() {
 
         <a
           href="mailto:ashiquekundala6@gmail.com"
-          className="inline-flex items-center justify-center px-10 py-5 text-sm font-medium transition-all duration-500 glass-panel text-white hover:bg-white hover:text-black rounded-full shadow-[0_0_40px_rgba(255,255,255,0.05)] hover:scale-105 active:scale-95 active:shadow-none hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="inline-flex items-center justify-center px-10 py-5 text-sm font-medium transition-all duration-500 glass-panel text-foreground hover:bg-foreground hover:text-background rounded-full shadow-button hover:scale-105 active:scale-95 active:shadow-none hover:-translate-y-1 hover:shadow-button-hover ease-[cubic-bezier(0.22,1,0.36,1)]"
         >
           <span className="tracking-widest">GET IN TOUCH</span>
         </a>
