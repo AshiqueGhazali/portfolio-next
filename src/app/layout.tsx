@@ -3,6 +3,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import ScrollIndicator from "./components/ui/ScrollIndicator";
 import CustomCursor from "./components/ui/CustomCursor";
+import TerminalMode from "./components/ui/TerminalMode";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
       >
         <ScrollIndicator />
         <CustomCursor />
+        <TerminalMode />
         <div className="bg-noise mix-blend-overlay opacity-50"></div>
         <main className="min-h-screen relative z-10">{children}</main>
         {/* tracker script */}
