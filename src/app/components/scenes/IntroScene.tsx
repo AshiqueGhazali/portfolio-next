@@ -24,8 +24,8 @@ const IntroScene = () => {
 
         {/* Ambient breathing lighting */}
         <div className="absolute inset-0 z-0 flex items-center justify-center">
-          <motion.div 
-            animate={{ 
+          <motion.div
+            animate={{
               scale: [1, 1.2, 1],
               opacity: [0.3, 0.5, 0.3],
             }}
@@ -34,10 +34,10 @@ const IntroScene = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="w-[50vw] h-[50vw] bg-primary/10 rounded-full blur-[120px] mix-blend-screen absolute" 
+            className="w-[50vw] h-[50vw] bg-primary/10 rounded-full blur-[120px] mix-blend-screen absolute"
           />
-          <motion.div 
-            animate={{ 
+          <motion.div
+            animate={{
               scale: [1, 1.3, 1],
               opacity: [0.2, 0.4, 0.2],
               rotate: [0, 90, 0]
@@ -47,7 +47,7 @@ const IntroScene = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="w-[40vw] h-[60vw] bg-secondary/10 rounded-full blur-[120px] mix-blend-screen absolute translate-x-1/4" 
+            className="w-[40vw] h-[60vw] bg-secondary/10 rounded-full blur-[120px] mix-blend-screen absolute translate-x-1/4"
           />
         </div>
 
@@ -68,11 +68,11 @@ const IntroScene = () => {
               Full Stack <br />
               <span className="italic font-normal text-muted-foreground">Engineer</span>
             </h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 2 }}
-              className="text-muted-foreground/80 font-light text-lg sm:text-xl max-w-md mx-auto leading-relaxed"
+              className="text-muted-foreground/80 font-light text-[14px] sm:text-[18px] max-w-md mx-auto leading-relaxed"
             >
               Crafting premium digital experiences through minimal design and complex engineering.
             </motion.p>
