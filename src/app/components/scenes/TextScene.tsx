@@ -14,12 +14,15 @@ const TextScene = () => {
   // Mapping the phrases to specific scroll windows
   const phrase1Opacity = useTransform(scrollYProgress, [0.1, 0.3, 0.4, 0.45], [0, 1, 1, 0]);
   const phrase1Y = useTransform(scrollYProgress, [0.1, 0.3, 0.4, 0.45], [50, 0, 0, -50]);
+  const phrase1Blur = useTransform(scrollYProgress, [0.1, 0.3, 0.4, 0.45], ["blur(20px)", "blur(0px)", "blur(0px)", "blur(20px)"]);
 
   const phrase2Opacity = useTransform(scrollYProgress, [0.45, 0.55, 0.65, 0.7], [0, 1, 1, 0]);
   const phrase2Y = useTransform(scrollYProgress, [0.45, 0.55, 0.65, 0.7], [50, 0, 0, -50]);
+  const phrase2Blur = useTransform(scrollYProgress, [0.45, 0.55, 0.65, 0.7], ["blur(20px)", "blur(0px)", "blur(0px)", "blur(20px)"]);
 
   const phrase3Opacity = useTransform(scrollYProgress, [0.7, 0.8, 0.9, 1.0], [0, 1, 1, 0]);
   const phrase3Y = useTransform(scrollYProgress, [0.7, 0.8, 0.9, 1.0], [50, 0, 0, -50]);
+  const phrase3Blur = useTransform(scrollYProgress, [0.7, 0.8, 0.9, 1.0], ["blur(20px)", "blur(0px)", "blur(0px)", "blur(20px)"]);
 
   return (
     <section ref={containerRef} className="relative h-[300vh] w-full bg-background border-t border-border">
@@ -52,7 +55,7 @@ const TextScene = () => {
 
         {/* Phrase 1 */}
         <motion.div
-          style={{ opacity: phrase1Opacity, y: phrase1Y }}
+          style={{ opacity: phrase1Opacity, y: phrase1Y, filter: phrase1Blur }}
           className="absolute flex items-center justify-center w-full px-6"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter text-center max-w-4xl text-muted-foreground/40 leading-[0.9]">
@@ -62,7 +65,7 @@ const TextScene = () => {
 
         {/* Phrase 2 */}
         <motion.div
-          style={{ opacity: phrase2Opacity, y: phrase2Y }}
+          style={{ opacity: phrase2Opacity, y: phrase2Y, filter: phrase2Blur }}
           className="absolute flex items-center justify-center w-full px-6"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter text-center max-w-4xl text-muted-foreground/40 leading-[0.9]">
@@ -72,7 +75,7 @@ const TextScene = () => {
 
         {/* Phrase 3 */}
         <motion.div
-          style={{ opacity: phrase3Opacity, y: phrase3Y }}
+          style={{ opacity: phrase3Opacity, y: phrase3Y, filter: phrase3Blur }}
           className="absolute flex items-center justify-center w-full px-6"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter text-center max-w-4xl text-muted-foreground/40 leading-[0.9]">

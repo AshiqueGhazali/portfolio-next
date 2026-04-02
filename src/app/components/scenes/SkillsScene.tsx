@@ -62,7 +62,7 @@ const SkillBadge = ({
     <motion.div 
       role="button"
       style={{ opacity, scale, y }}
-      className="flex items-center gap-2 font-sans font-medium text-sm md:text-base tracking-wide px-6 py-3 rounded-full glass-panel text-foreground hover:bg-foreground/5 hover:border-foreground/20 hover:-translate-y-1 hover:shadow-button-hover transition-all duration-300 cursor-default"
+      className="flex items-center gap-2 font-sans font-medium text-[13px] md:text-base tracking-wide px-4 py-2 md:px-6 md:py-3 rounded-full glass-panel text-foreground hover:bg-foreground/5 hover:border-foreground/20 hover:-translate-y-1 hover:shadow-button-hover transition-all duration-300 cursor-default"
     >
       <skill.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
       <span>{skill.name}</span>
@@ -86,7 +86,7 @@ const CategoryTitle = ({
   return (
     <motion.h4 
       style={{ opacity, y }} 
-      className="font-sans font-semibold text-lg md:text-xl text-muted-foreground mb-6 tracking-wide"
+      className="font-sans font-semibold text-base md:text-xl text-muted-foreground mb-4 md:mb-6 tracking-wide"
     >
       {title}
     </motion.h4>
@@ -105,19 +105,20 @@ export default function SkillsScene() {
 
   return (
     <section ref={containerRef} className="relative h-[200vh] w-full bg-background border-t border-border">
-      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-6">
+      <div className="sticky top-0 h-[100dvh] w-full flex flex-col items-center justify-center overflow-hidden px-4 md:px-6">
         
-        <motion.h3 
+        <div className="w-full flex flex-col items-center py-10 md:py-0 w-full max-w-5xl mx-auto">
+          <motion.h3 
           style={{ 
             opacity: useTransform(scrollYProgress, [0.1, 0.3], [0, 1]),
             y: useTransform(scrollYProgress, [0.1, 0.3], [20, 0])
           }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-display font-bold tracking-tighter text-foreground mb-16 md:mb-20 leading-[0.85] text-center"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] font-display font-bold tracking-tighter text-foreground mb-6 md:mb-16 leading-[0.85] text-center"
         >
           Core Technologies
         </motion.h3>
 
-        <div className="flex flex-col gap-12 md:gap-16 max-w-5xl mx-auto w-full">
+        <div className="flex flex-col gap-6 md:gap-16 w-full">
           {skillCategories.map((category, catIndex) => {
             const catGlobalIndex = runningIndex;
             
@@ -145,6 +146,7 @@ export default function SkillsScene() {
               </div>
             );
           })}
+          </div>
         </div>
       </div>
     </section>
