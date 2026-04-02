@@ -7,6 +7,39 @@ import { ArrowUpRight, X, Github } from "lucide-react";
 export default function ProjectsScene() {
   const targetRef = useRef<HTMLDivElement>(null);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const touchStartY = useRef<number>(0);
+
+  // Scroll interception logic
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    const isAtTop = target.scrollTop === 0;
+    const isAtBottom = Math.abs(target.scrollHeight - target.clientHeight - target.scrollTop) <= 1;
+
+    if (e.deltaY > 0 && !isAtBottom) {
+      e.stopPropagation();
+    } else if (e.deltaY < 0 && !isAtTop) {
+      e.stopPropagation();
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    const touchY = e.touches[0].clientY;
+    const deltaY = touchStartY.current - touchY; 
+    const target = e.currentTarget;
+
+    const isAtTop = target.scrollTop === 0;
+    const isAtBottom = Math.abs(target.scrollHeight - target.clientHeight - target.scrollTop) <= 1;
+
+    if (deltaY > 0 && !isAtBottom) {
+      e.stopPropagation();
+    } else if (deltaY < 0 && !isAtTop) {
+      e.stopPropagation();
+    }
+  };
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -45,8 +78,14 @@ export default function ProjectsScene() {
                 <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16 h-full">
                   
                   {/* Left Text Detail */}
-                  <div className="flex-1 w-full space-y-4 lg:space-y-6 flex flex-col justify-center max-h-[50%] lg:max-h-full overflow-y-auto custom-scrollbar pr-2 lg:pr-0">
-                    <div>
+                  <div className="flex-1 w-full relative max-h-[50%] lg:max-h-full flex flex-col overflow-hidden">
+                    <div 
+                      className="flex-1 w-full overflow-y-auto custom-scrollbar pr-4 space-y-4 lg:space-y-6 pb-24"
+                      onWheel={handleWheel}
+                      onTouchStart={handleTouchStart}
+                      onTouchMove={handleTouchMove}
+                    >
+                      <div>
                       <h4 className="text-primary text-xs lg:text-sm font-semibold tracking-[0.2em] uppercase mb-2 lg:mb-4">
                         Selected Project
                       </h4>
@@ -81,7 +120,11 @@ export default function ProjectsScene() {
                     </div>
                   </div>
 
-                  {/* Right Image Container */}
+                  {/* Gradient mask to indicate scrollability smoothly */}
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none lg:pr-16" />
+                </div>
+
+                {/* Right Image Container */}
                   <motion.div 
                     layoutId={`project-bg-${index}`}
                     onClick={() => setSelectedProject(index)}
