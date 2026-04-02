@@ -18,13 +18,13 @@ export default function ContactScene() {
         transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         className="z-10 text-center max-w-4xl w-full"
       >
-        <span className="text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-6 block">
+        <span className="text-sm tracking-[0.3em] text-muted-foreground/60 mb-6 font-mono block">
           What's Next?
         </span>
 
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-foreground mb-10">
+        <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-display font-bold tracking-tighter text-foreground mb-6 leading-[0.85]">
           Let's create <br className="hidden md:block" />
-          <span className="italic text-muted-foreground">something.</span>
+          <span className="italic font-bold text-muted-foreground opacity-80">something.</span>
         </h2>
 
         <a

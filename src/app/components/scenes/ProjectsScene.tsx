@@ -28,7 +28,7 @@ export default function ProjectsScene() {
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     const touchY = e.touches[0].clientY;
-    const deltaY = touchStartY.current - touchY; 
+    const deltaY = touchStartY.current - touchY;
     const target = e.currentTarget;
 
     const isAtTop = target.scrollTop === 0;
@@ -49,7 +49,7 @@ export default function ProjectsScene() {
       document.body.style.overflow = "auto";
     }
   }, [selectedProject]);
-  
+
   // Create a scroll container that is as tall as the number of projects (each getting 100vh)
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -66,74 +66,74 @@ export default function ProjectsScene() {
         <motion.div style={{ x }} className="flex h-screen w-max items-center">
           {projectsData.map((project, index) => {
             return (
-              <div 
+              <div
                 key={index}
                 className="w-screen h-[100dvh] flex items-center justify-center p-6 pt-24 pb-12 lg:p-24 relative overflow-hidden"
               >
                 {/* Background Numbering */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40vw] lg:text-[30vw] font-bold text-foreground/[0.03] pointer-events-none z-0">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[45vw] lg:text-[35vw] font-display font-bold tracking-tighter text-foreground/[0.03] pointer-events-none z-0">
                   0{index + 1}
                 </div>
 
                 <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16 h-full">
-                  
+
                   {/* Left Text Detail */}
                   <div className="flex-1 w-full relative max-h-[50%] lg:max-h-full flex flex-col overflow-hidden">
-                    <div 
+                    <div
                       className="flex-1 w-full overflow-y-auto custom-scrollbar pr-4 space-y-4 lg:space-y-6 pb-24"
                       onWheel={handleWheel}
                       onTouchStart={handleTouchStart}
                       onTouchMove={handleTouchMove}
                     >
                       <div>
-                      <h4 className="text-primary text-xs lg:text-sm font-semibold tracking-[0.2em] uppercase mb-2 lg:mb-4">
-                        Selected Project
-                      </h4>
-                      <motion.h2 
-                        layoutId={`project-title-${index}`}
-                        className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tighter text-foreground mb-4 lg:mb-6"
-                      >
-                        {project.name}
-                      </motion.h2>
-                    </div>
+                        <h4 className="text-primary text-xs lg:text-sm font-semibold tracking-[0.2em] uppercase mb-2 lg:mb-4">
+                          Selected Project
+                        </h4>
+                        <motion.h2
+                          layoutId={`project-title-${index}`}
+                          className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter text-foreground mb-4 lg:mb-6 leading-[0.9]"
+                        >
+                          {project.name}
+                        </motion.h2>
+                      </div>
 
-                    <p className="text-muted-foreground text-sm lg:text-lg font-light leading-relaxed max-w-xl">
-                      {project.details}
-                    </p>
+                      <p className="text-muted-foreground text-sm lg:text-lg font-light leading-relaxed max-w-xl">
+                        {project.details}
+                      </p>
 
-                    <div className="flex flex-wrap gap-2 lg:gap-3 py-2">
+                      <div className="flex flex-wrap gap-2 lg:gap-3 py-2">
                         {project.techstack.map((tech, i) => (
-                            <span
+                          <span
                             key={i}
                             className="px-3 py-1 lg:px-4 lg:py-2 text-[10px] lg:text-xs font-medium bg-foreground/5 border border-border text-muted-foreground rounded-full tracking-wider"
-                            >
+                          >
                             {tech}
-                            </span>
+                          </span>
                         ))}
+                      </div>
+
+                      <div className="pt-2 lg:pt-6 pb-4">
+                        <a href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 group px-6 py-3 lg:px-8 lg:py-4 bg-foreground/10 hover:bg-foreground text-foreground hover:text-background rounded-full transition-all duration-500 hover:scale-105 active:scale-95 text-xs lg:text-sm">
+                          <span className="font-medium tracking-wide">View Project</span>
+                          <ArrowUpRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:rotate-45 transition-transform duration-300" />
+                        </a>
+                      </div>
                     </div>
 
-                    <div className="pt-2 lg:pt-6 pb-4">
-                      <a href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 group px-6 py-3 lg:px-8 lg:py-4 bg-foreground/10 hover:bg-foreground text-foreground hover:text-background rounded-full transition-all duration-500 hover:scale-105 active:scale-95 text-xs lg:text-sm">
-                        <span className="font-medium tracking-wide">View Project</span>
-                        <ArrowUpRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:rotate-45 transition-transform duration-300" />
-                      </a>
-                    </div>
+                    {/* Gradient mask to indicate scrollability smoothly */}
+                    <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none lg:pr-16" />
                   </div>
 
-                  {/* Gradient mask to indicate scrollability smoothly */}
-                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none lg:pr-16" />
-                </div>
-
-                {/* Right Image Container */}
-                  <motion.div 
+                  {/* Right Image Container */}
+                  <motion.div
                     layoutId={`project-bg-${index}`}
                     onClick={() => setSelectedProject(index)}
                     className="flex-1 w-full max-h-[40%] lg:max-h-[65%] lg:h-[65vh] relative group overflow-hidden rounded-2xl flex items-center justify-center bg-foreground/5 transition-all duration-700 hover:bg-foreground/10 hover:shadow-2xl hover:-translate-y-2 hover:shadow-primary/10 cursor-pointer border border-border"
                   >
                     <div className="absolute inset-0 bg-background/40 z-10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
-                    <motion.img 
+                    <motion.img
                       layoutId={`project-image-${index}`}
-                      src={project.image} 
+                      src={project.image}
                       alt={project.name}
                       className="w-full h-full object-contain p-4 lg:p-8 scale-100 group-hover:scale-105 transition-transform duration-[1.5s] ease-[cubic-bezier(0.22,1,0.36,1)]"
                     />
@@ -198,7 +198,7 @@ export default function ProjectsScene() {
                 >
                   <motion.h2
                     layoutId={`project-title-${selectedProject}`}
-                    className="text-4xl md:text-6xl font-light tracking-tighter text-foreground mb-8"
+                    className="text-5xl md:text-7xl lg:text-[80px] font-display font-bold tracking-tighter text-foreground mb-8 leading-[0.9]"
                   >
                     {projectsData[selectedProject].name}
                   </motion.h2>
@@ -238,7 +238,7 @@ export default function ProjectsScene() {
                   </div>
 
                   {/* CTAs */}
-                  <motion.div 
+                  <motion.div
                     className="flex flex-wrap gap-4 mt-12"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

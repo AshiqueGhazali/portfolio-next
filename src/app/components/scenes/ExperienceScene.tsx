@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function ExperienceScene() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
@@ -29,15 +29,15 @@ export default function ExperienceScene() {
 
   // Map scroll progress to a reveal effect over the container
   // As user scrolls through the massive 200vh height, cards float up sequentially
-  
+
   return (
     <section ref={containerRef} className="relative py-32 lg:py-48 min-h-[150vh] w-full bg-background border-t border-border flex items-center justify-center">
-      
+
       <div className="max-w-6xl mx-auto px-6 w-full flex flex-col gap-32">
         <div className="w-full text-left md:text-center sticky top-32 lg:static mb-10 z-0">
-           <h2 className="text-3xl md:text-5xl font-light tracking-tighter text-muted-foreground/30">
-               Experience
-           </h2>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter text-muted-foreground/30 leading-[0.9]">
+            Experience
+          </h2>
         </div>
 
         <div className="flex flex-col gap-24 relative z-10 mt-10 lg:mt-0">
@@ -45,7 +45,7 @@ export default function ExperienceScene() {
             // Using frame motion's whileInView is perfect here instead of tight scroll mapping 
             // because we want an elegant entry as opposed to a strict scrub.
             return (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 100, filter: "blur(10px)", scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
@@ -60,7 +60,7 @@ export default function ExperienceScene() {
                   <h3 className="text-2xl lg:text-4xl font-light tracking-tight text-foreground mb-3">
                     {item.role}
                   </h3>
-                  <h4 className="text-lg text-muted-foreground mb-4 lg:mb-0">
+                  <h4 className="text-3xl md:text-4xl lg:text-6xl  text-muted-foreground mb-4 lg:mb-0 font-display font-bold tracking-tighter text-foreground">
                     {item.company}
                   </h4>
                 </div>

@@ -64,9 +64,9 @@ const IntroScene = () => {
             <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground/60 mb-6 font-mono">
               Muhammed Ashique P K
             </p>
-            <h1 className="text-5xl sm:text-5xl md:text-6xl font-light tracking-tight text-foreground mb-6">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[100px] font-display font-bold tracking-tighter text-foreground mb-6 leading-[0.85]">
               Full Stack <br />
-              <span className="italic font-normal text-muted-foreground">Engineer</span>
+              <span className="italic font-bold text-muted-foreground opacity-80">Engineer</span>
             </h1>
             <motion.p
               initial={{ opacity: 0 }}

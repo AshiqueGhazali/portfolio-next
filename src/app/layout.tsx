@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import ScrollIndicator from "./components/ui/ScrollIndicator";
 import CustomCursor from "./components/ui/CustomCursor";
 import TerminalMode from "./components/ui/TerminalMode";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeToggle } from "./components/ui/ThemeToggle";
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -43,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}
+        className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${inter.variable} ${syne.variable} font-sans antialiased`}
       >
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
           <ThemeToggle />

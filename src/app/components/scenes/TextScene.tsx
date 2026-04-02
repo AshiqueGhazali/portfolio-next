@@ -55,8 +55,8 @@ const TextScene = () => {
           style={{ opacity: phrase1Opacity, y: phrase1Y }}
           className="absolute flex items-center justify-center w-full px-6"
         >
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-center max-w-3xl leading-snug text-muted-foreground">
-            I <span className="text-foreground font-medium italic">design</span> scalable systems <br /> that solve complex problems.
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter text-center max-w-4xl text-muted-foreground/40 leading-[0.9]">
+            I <span className="text-foreground tracking-tight">design</span> scalable systems <br /> that solve complex problems.
           </h2>
         </motion.div>
 
@@ -65,8 +65,8 @@ const TextScene = () => {
           style={{ opacity: phrase2Opacity, y: phrase2Y }}
           className="absolute flex items-center justify-center w-full px-6"
         >
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-center max-w-3xl leading-snug text-muted-foreground">
-            I <span className="text-foreground font-medium italic">craft</span> fullstack applications <br /> from idea to production.
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter text-center max-w-4xl text-muted-foreground/40 leading-[0.9]">
+            I <span className="text-foreground tracking-tight">craft</span> fullstack applications <br /> from idea to production.
           </h2>
         </motion.div>
 
@@ -75,8 +75,8 @@ const TextScene = () => {
           style={{ opacity: phrase3Opacity, y: phrase3Y }}
           className="absolute flex items-center justify-center w-full px-6"
         >
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-center max-w-3xl leading-snug text-muted-foreground">
-            I <span className="text-foreground font-medium italic">create</span> digital products <br /> optimized for performance.
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter text-center max-w-4xl text-muted-foreground/40 leading-[0.9]">
+            I <span className="text-foreground tracking-tight">create</span> digital products <br /> optimized for performance.
           </h2>
         </motion.div>
 
