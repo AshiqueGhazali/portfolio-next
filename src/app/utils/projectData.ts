@@ -1,6 +1,6 @@
 const projectsData = [
   {
-    image: "/coinspe1.png",
+    image: "/coinspe.png",
     name: "CoinsPe",
     href: "https://coinspe.com/",
     techstack: [
